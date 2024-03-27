@@ -100,4 +100,4 @@ const Board = () => {
 export default Board;
 ```
 
-### 7. 기존 localhost에서 p태그 내부를 “Hellow World! - (2024-1) 해달 리액트 코스 000” (000은 자기 이름)로 변경한 후의 화면 스크린샷
+### 7. 기존 App.tsx에서 p태그 내부를 “Hellow World! - (2024-1) 해달 리액트 코스 000” (000은 자기 이름)로 변경한 후의 화면 스크린샷
