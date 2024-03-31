@@ -22,20 +22,34 @@ Reviewers에는 miloul을, Assignees엔 자기 자신을, Lable엔 Quiz 라벨�
 ## 퀴즈 과제
 
 ### 1. React의 컴포넌트는 중첩할 수 있다 (O/X)
+	O
 
 ### 2. 리액트의 특징에 대해서 적으세요(2가지 이상)
+	1) 자바스크립트 라이브러리로 사용자 인터페이스 만드는데 사용
+ 	2) 단방향, 명시적 상태 변화
+  	3) 가상 DOM 형태
 
 ### 3. JSX의 최상위 요소는 한개 이상이어야한다 (O/X)
+	X (1개)
 
 ### 4. 컴포넌트란?
+	공통점을 찾아 재사용 가능한 독립적 모듈로 분리한 것
 
 ### 5. 다음과 같은 버튼 컴포넌트를 아래 사진과 같이 배경색이 파란색이고, 테두리가 없으며, borderRadius가 10px이고, 글자색이 하얀색인 스타일을 추가하세요 (방식은 자유)
 
 ```tsx
 const Button = () => {
 	return (
-		<button>날 꾸며줘~</button>
+		<button class="hwBtn">날 꾸며줘~</button>
 	)
+}
+```
+```css
+.hwBtn {
+  background-color: blue;
+  border: none;
+  border-radius: 10px;
+  color: white;
 }
 ```
 
@@ -51,12 +65,12 @@ function App() {
     	<div>
 		    	// 버튼을 누르면 visible이 !visible로.. (true -> false, false -> true)
         	<button onClick={() => setVisible(!visible)}>toggle</button>
-            {????
+            {visible &&
             	<h1>논리곱으로</h1>
              }
-             {????
-            	<h1>삼항연산자로</h1>
-             ????}
+             {visible ?
+            	(<h1>삼항연산자로</h1>)
+             : (  <h1>false라면</h1>  )}
         </div>
     )
 }
@@ -87,7 +101,7 @@ const Board = () => {
 	return (
     	<div>
         	<ul>
-        		{members.???((member) => (
+        		{members.map((member) => (
             		<li>
                 		{member.id} | {member.name} | {member.role}
                 	</li>
@@ -101,3 +115,5 @@ export default Board;
 ```
 
 ### 7. 기존 App.tsx에서 p태그 내부를 “Hellow World! - (2024-1) 해달 리액트 코스 000” (000은 자기 이름)로 변경한 후의 화면 스크린샷
+![image](https://github.com/miloul/advance-react-quiz/assets/84756846/ec9bae76-69da-444d-a4c1-6559e9456ec2)
+
