@@ -22,21 +22,36 @@ Reviewers에는 miloul을, Assignees엔 자기 자신을, Lable엔 Quiz 라벨�
 ## 퀴즈 과제
 
 ### 1. 아래 Javascript 코드를 Typescript와 styled component를 사용하는 코드로 변경해주세요
+
+Title.tsx
 ```
-const Title = (title) => {
-  return (
-    <div style={{ fontSize: "50px", backgroundColor: "blue", color: "white" }}>
-      {title}
-    </div>
-  );
+import styled from "styled-components";
+
+interface TitleProps {
+  title: string;
+}
+
+const StyledTitle = styled.div`
+  font-size: 50px;
+  background-color: blue;
+  color: white;
+`;
+
+const Title = ({ title = "안녕" }: TitleProps) => {
+  return <StyledTitle>{title}</StyledTitle>;
 };
 
-Title.defaultProps = {
-  title: "안녕",
-};
+export default Title;
 
-Title.propTypes = {
-  title: PropTyepes.string,
-};
+```
 
-export default Title;```
+app.tsx
+```
+        <Title></Title>
+        <Title title="반가워"></Title>
+```
+
+결과
+![image](https://github.com/miloul/advance-react-quiz/assets/84756846/850d2218-f808-4071-87c9-afb1c9ae6828)
+
+
