@@ -23,20 +23,23 @@ Reviewers에는 miloul을, Assignees엔 자기 자신을, Lable엔 Quiz 라벨�
 
 ### 1. 아래 Javascript 코드를 Typescript와 styled component를 사용하는 코드로 변경해주세요
 ```
-const Title = (title) => {
-  return (
-    <div style={{ fontSize: "50px", backgroundColor: "blue", color: "white" }}>
-      {title}
-    </div>
-  );
+import styled from "styled-components";
+
+interface titleprop {
+  title?: string;
+}
+
+const StyledImage = styled.div`
+ margin: "3rem",
+ fontSize: "50px",
+ fontWeight: "bold",
+ backgroundColor: "blue",
+ color: "white"
+ `;
+
+const Title = ({ title = "안녕" }: titleprop) => {
+  return <StyledImage>{title}</StyledImage>;
 };
 
-Title.defaultProps = {
-  title: "안녕",
-};
-
-Title.propTypes = {
-  title: PropTyepes.string,
-};
-
-export default Title;```
+export default Title;
+```
